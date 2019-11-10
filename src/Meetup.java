@@ -1,8 +1,8 @@
-public class University implements KnowledgeSource {
+public class Meetup implements KnowledgeSource {
     private double learnPoints;
     private double practicePoints;
 
-    University(double learnPoints, double practicePoints) {
+    public Meetup(double learnPoints, double practicePoints) {
         this.learnPoints = learnPoints;
         this.practicePoints = practicePoints;
     }
@@ -10,6 +10,8 @@ public class University implements KnowledgeSource {
     @Override
     public void educate(Student student) {
         student.learn(learnPoints);
-        student.practice(practicePoints);
+        if (student.hasNotebook()) {
+            student.practice(practicePoints);
+        }
     }
 }

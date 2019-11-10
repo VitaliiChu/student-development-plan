@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -14,13 +15,26 @@ public class Main {
         Set<DayOfWeek> daysOfWeek = new HashSet<>();
         daysOfWeek.add(DayOfWeek.MONDAY);
 
+        Set<Month> schoolMonths = new HashSet<>();
+        schoolMonths.add(Month.SEPTEMBER);
+        schoolMonths.add(Month.OCTOBER);
+        schoolMonths.add(Month.NOVEMBER);
+        schoolMonths.add(Month.DECEMBER);
+        schoolMonths.add(Month.JANUARY);
+        schoolMonths.add(Month.FEBRUARY);
+        schoolMonths.add(Month.MARCH);
+        schoolMonths.add(Month.APRIL);
+        schoolMonths.add(Month.MAY);
+
         CompositeSchedule compositeSchedule = new CompositeSchedule();
         Period schedule = new Period(initialDate, finalDate);
-        MyDayOfWeek dayOfWeek = new MyDayOfWeek(daysOfWeek);
+        StudyDayOfWeek dayOfWeek = new StudyDayOfWeek(daysOfWeek);
+        StudyMonth studyMonth = new StudyMonth(schoolMonths);
         compositeSchedule.addSchedule(schedule);
         compositeSchedule.addSchedule(dayOfWeek);
+        compositeSchedule.addSchedule(studyMonth);
 
-        Student student1 = new Student(1);
+        Student student1 = new Student(1, true);
         students.add(student1);
         KnowledgeSource knowledgeSource = new University(1, 1);
 
@@ -31,7 +45,7 @@ public class Main {
         DevPlan devPlan = new DevPlan(activities);
 
         for (Student student : students) {
-            devPlan.perform(student, new Period(LocalDate.parse("2019-11-04"), LocalDate.parse("2019-11-12")));
+            devPlan.perform(student, new Period(LocalDate.parse("2019-11-04"), LocalDate.parse("2019-11-05")));
         }
 
         for (Student student : students) {

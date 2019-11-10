@@ -1,10 +1,10 @@
 import java.time.LocalDate;
 
 public class Activity {
-    CompositeSchedule compositeSchedule;
-    KnowledgeSource knowledgeSource;
+    private CompositeSchedule compositeSchedule;
+    private KnowledgeSource knowledgeSource;
 
-    public Activity(CompositeSchedule compositeSchedule, KnowledgeSource knowledgeSource) {
+    Activity(CompositeSchedule compositeSchedule, KnowledgeSource knowledgeSource) {
         this.compositeSchedule = compositeSchedule;
         this.knowledgeSource = knowledgeSource;
     }

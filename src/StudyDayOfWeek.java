@@ -2,10 +2,10 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Set;
 
-public class MyDayOfWeek implements Schedule {
+public class StudyDayOfWeek implements Schedule {
     private Set<DayOfWeek> daysOfWeek;
 
-    public MyDayOfWeek(Set<DayOfWeek> daysOfWeek) {
+    public StudyDayOfWeek(Set<DayOfWeek> daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
     }
 

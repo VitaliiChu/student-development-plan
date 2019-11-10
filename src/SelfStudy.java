@@ -1,8 +1,8 @@
-public class University implements KnowledgeSource {
+public class SelfStudy implements KnowledgeSource {
     private double learnPoints;
     private double practicePoints;
 
-    University(double learnPoints, double practicePoints) {
+    public SelfStudy(double learnPoints, double practicePoints) {
         this.learnPoints = learnPoints;
         this.practicePoints = practicePoints;
     }
