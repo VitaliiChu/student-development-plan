@@ -34,11 +34,12 @@ public class Main {
         compositeSchedule.addSchedule(dayOfWeek);
         compositeSchedule.addSchedule(studyMonth);
 
-        Student student1 = new Student(1, true);
+        Student student1 = new Student("Tom", 0, 1, true);
         students.add(student1);
-        KnowledgeSource knowledgeSource = new University(1, 1);
+        University university = new University(1, 1);
+        university.enrollStudents(students);
 
-        Activity activity = new Activity(compositeSchedule, knowledgeSource);
+        Activity activity = new Activity(compositeSchedule, university);
         List<Activity> activities = new ArrayList<>();
         activities.add(activity);
 
